@@ -11,6 +11,6 @@ Nota : cette commande a été élaboré par moi même (inspiré par d'autres mai
 
 Par exemple trouver toutes les occurrences de l'interface ens3 après renommage :
 ```sh
-user@host:~# IFS=$'\n' ; for d in $( ls -d1 /* | grep -Ev "dev|proc|run|sys" ) ; do grep -Ir ens3 /$d ; done ; unset IFS
+user@host:~# IFS=$'\n' ; for d in $( ls -d1 /* | grep -Ev "dev|proc|run|sys" ) ; do grep -Ir ens3 $d ; done ; unset IFS
 ```
 Rappel :  grep -I ne traite pas les fichiers binaires
