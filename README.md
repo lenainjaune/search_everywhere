@@ -1,5 +1,5 @@
-# search_everywhere
-Chercher partout un texte en clair
+
+# Chercher par texte en clair
 
 Forme générale :
 ```sh
@@ -14,3 +14,10 @@ Par exemple trouver toutes les occurrences de l'interface ens3 après renommage 
 user@host:~# IFS=$'\n' ; for d in $( ls -d1 /* | grep -Ev "dev|proc|run|sys" ) ; do grep -Ir ens3 $d ; done ; unset IFS
 ```
 Rappel :  grep -I ne traite pas les fichiers binaires
+
+# Chercher fichiers par extension
+
+Ici les vidéos :
+```sh
+user@host:~# find films -type f -regextype posix-extended -iregex "^.*\.(mp4|flv|wmv|avi|mp?g|mov|m4v)$"
+```
